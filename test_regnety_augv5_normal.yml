@@ -1,22 +1,21 @@
-train_batch_size: 96
-val_batch_size: 48
-num_workers: 32
-input_size: 320
+train_batch_size: 8
+val_batch_size: 8
+num_workers: 2
+input_size: 512
 backbone: regnety_120
 augmentation_func: peko.augmentation.get_augv5
 
 total_epochs: 10
 train_dataset: hotelid
-n_classes: 3116
+n_classes: 3200
 
 pretrained_model: null
 pretrained_remove_fc: null
 
 optimizer:
-  fqdn: torch.optim.Adam
+  fqdn: torch.optim.AdamW
   kwargs:
     lr: 0.0001
-    weight_decay: 0.00001
 
 scheduler:
   fqdn: torch.optim.lr_scheduler.CosineAnnealingLR
